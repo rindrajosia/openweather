@@ -134,6 +134,66 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
+/***/ "./src/controller/image.js":
+/*!*********************************!*\
+  !*** ./src/controller/image.js ***!
+  \*********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst getImage = async (image) => {\n  let url;\n  try {\n    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=OLa1GdalJj8y8IrlW1N6JC8GzUk7q2UM&s=${image}`, { mode: 'cors' });\n    url = await response.json();\n    url = url.data.images.original.url;\n  } catch (error) {\n    url = error.message;\n  }\n  return url;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getImage);\n\n\n//# sourceURL=webpack://open/./src/controller/image.js?");
+
+/***/ }),
+
+/***/ "./src/controller/weather.js":
+/*!***********************************!*\
+  !*** ./src/controller/weather.js ***!
+  \***********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _models_httperror__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../models/httperror */ \"./src/models/httperror.js\");\n\n\nconst getWeather = async (city, unit = 'imperial') => {\n  const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&APPID=860d9b61b8c2194f272f3ec98539f779`, { mode: 'cors' });\n  if (response.status === 200) {\n    return response.json();\n  }\n  throw new _models_httperror__WEBPACK_IMPORTED_MODULE_0__.default(response);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getWeather);\n\n\n//# sourceURL=webpack://open/./src/controller/weather.js?");
+
+/***/ }),
+
+/***/ "./src/events/close.js":
+/*!*****************************!*\
+  !*** ./src/events/close.js ***!
+  \*****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst closeModal = (icon, modal) => {\n  const closeIcon = document.getElementById(icon);\n  const modalError = document.getElementById(modal);\n  closeIcon.addEventListener('click', () => {\n    modalError.style.display = 'none';\n  });\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (closeModal);\n\n\n//# sourceURL=webpack://open/./src/events/close.js?");
+
+/***/ }),
+
+/***/ "./src/events/formCity.js":
+/*!********************************!*\
+  !*** ./src/events/formCity.js ***!
+  \********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _view_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../view/render */ \"./src/view/render.js\");\n\n\nconst formCity = () => {\n  const form = document.getElementById('city');\n  form.addEventListener('submit', (e) => {\n    const inputCity = document.getElementById('inputCity').value;\n    (0,_view_render__WEBPACK_IMPORTED_MODULE_0__.default)(inputCity);\n    form.reset();\n    e.preventDefault();\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formCity);\n\n\n//# sourceURL=webpack://open/./src/events/formCity.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -144,7 +204,67 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _view_error__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./view/error */ \"./src/view/error.js\");\n/* harmony import */ var _view_search__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./view/search */ \"./src/view/search.js\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './events/formCity'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\n\n\n\n\n\n\n(async () => {\n  (0,_view_error__WEBPACK_IMPORTED_MODULE_4__.default)();\n  (0,_view_search__WEBPACK_IMPORTED_MODULE_5__.default)();\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './events/formCity'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\n})();\n\n\n//# sourceURL=webpack://open/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _view_error__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./view/error */ \"./src/view/error.js\");\n/* harmony import */ var _view_search__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./view/search */ \"./src/view/search.js\");\n/* harmony import */ var _events_formCity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./events/formCity */ \"./src/events/formCity.js\");\n\n\n\n\n\n\n\n\n(async () => {\n  (0,_view_error__WEBPACK_IMPORTED_MODULE_4__.default)();\n  (0,_view_search__WEBPACK_IMPORTED_MODULE_5__.default)();\n  (0,_events_formCity__WEBPACK_IMPORTED_MODULE_3__.default)();\n})();\n\n\n//# sourceURL=webpack://open/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/models/httperror.js":
+/*!*********************************!*\
+  !*** ./src/models/httperror.js ***!
+  \*********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nclass HttpError extends Error {\n  constructor(response) {\n    super(`${response.status} for ${response.url}`);\n    this.name = 'HttpError';\n    this.response = response;\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HttpError);\n\n\n//# sourceURL=webpack://open/./src/models/httperror.js?");
+
+/***/ }),
+
+/***/ "./src/models/info.js":
+/*!****************************!*\
+  !*** ./src/models/info.js ***!
+  \****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst weatherInfo = (image, country, weather, temp, tempmax, tempmin, humidity, pressure) => {\n  const getInfo = () => ({\n    image,\n    country,\n    weather,\n    temp,\n    tempmax,\n    tempmin,\n    humidity,\n    pressure,\n  });\n\n  return {\n    getInfo,\n  };\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (weatherInfo);\n\n\n//# sourceURL=webpack://open/./src/models/info.js?");
+
+/***/ }),
+
+/***/ "./src/view/card.js":
+/*!**************************!*\
+  !*** ./src/view/card.js ***!
+  \**************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst card = (data, unit = 'F°') => {\n  const contentCenter = document.getElementById('contentCenter');\n\n  if (document.contains(document.getElementById('card'))) {\n    document.getElementById('card').remove();\n  }\n\n  const card = document.createElement('div');\n  card.classList.add('card', 'mb-3');\n  card.setAttribute('id', 'card');\n\n  const img = document.createElement('img');\n  img.setAttribute('src', data.getInfo().image);\n  img.setAttribute('id', 'img-size');\n  img.classList.add('card-img-top');\n\n  card.appendChild(img);\n\n  const cardheader = document.createElement('div');\n  cardheader.classList.add('card-header');\n\n  const country = document.createElement('h6');\n  country.classList.add('card-title', 'text-center');\n  country.innerHTML = `City : ${data.getInfo().country}`;\n\n  cardheader.appendChild(country);\n\n  card.appendChild(cardheader);\n\n  const cardbody = document.createElement('div');\n  cardbody.classList.add('card-body');\n\n  const weather = document.createElement('p');\n  weather.classList.add('card-text', 'text-center');\n  weather.innerHTML = `Weather : ${data.getInfo().weather}`;\n\n  cardbody.appendChild(weather);\n\n  const temp = document.createElement('p');\n  temp.classList.add('card-text', 'text-center');\n  temp.innerHTML = `Temp : ${data.getInfo().temp}  ${unit}`;\n\n  cardbody.appendChild(temp);\n\n  const tempmax = document.createElement('p');\n  tempmax.classList.add('card-text', 'text-center');\n  tempmax.innerHTML = `Temp Max : ${data.getInfo().tempmax}  ${unit}`;\n\n  cardbody.appendChild(tempmax);\n\n  const tempmin = document.createElement('p');\n  tempmin.classList.add('card-text', 'text-center');\n  tempmin.innerHTML = `Temp Min : ${data.getInfo().tempmin} ${unit}`;\n\n  cardbody.appendChild(tempmin);\n\n  const humidity = document.createElement('p');\n  humidity.classList.add('card-text', 'text-center');\n  humidity.innerHTML = `Humidity : ${data.getInfo().humidity}`;\n\n  cardbody.appendChild(humidity);\n\n  const pressure = document.createElement('p');\n  pressure.classList.add('card-text', 'text-center');\n  pressure.innerHTML = `Pressure : ${data.getInfo().pressure}`;\n\n  cardbody.appendChild(pressure);\n\n  card.appendChild(cardbody);\n\n  contentCenter.appendChild(card);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (card);\n\n\n//# sourceURL=webpack://open/./src/view/card.js?");
+
+/***/ }),
+
+/***/ "./src/view/display.js":
+/*!*****************************!*\
+  !*** ./src/view/display.js ***!
+  \*****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./card */ \"./src/view/card.js\");\n/* harmony import */ var _toggle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toggle */ \"./src/view/toggle.js\");\n\n\n\nconst display = (data) => {\n  if (document.contains(document.getElementById('content'))) {\n    document.getElementById('content').remove();\n  }\n  const content = document.createElement('div');\n  content.classList.add('container-fluid');\n  content.setAttribute('id', 'content');\n\n  const contentCenter = document.createElement('div');\n  contentCenter.classList.add('row', 'justify-content-center', 'align-items-center');\n  contentCenter.setAttribute('id', 'contentCenter');\n\n  const contentToogle = document.createElement('div');\n  contentToogle.classList.add('form-row', 'justify-content-center', 'align-items-center', 'mt-2', 'col-12');\n\n  const toogleDiv = document.createElement('div');\n  toogleDiv.classList.add('my-1');\n\n  const celcius = document.createElement('span');\n  celcius.classList.add('span', 'align-top', 'pr-2');\n  celcius.innerHTML = 'Celcius';\n  toogleDiv.appendChild(celcius);\n\n  const switchLabel = document.createElement('label');\n  switchLabel.classList.add('switch');\n\n  const checkbox = document.createElement('input');\n  checkbox.setAttribute('type', 'checkbox');\n  checkbox.classList.add('form-control');\n  checkbox.setAttribute('id', 'myCheck');\n  checkbox.setAttribute('checked', true);\n  checkbox.onclick = () => (0,_toggle__WEBPACK_IMPORTED_MODULE_0__.default)(data);\n  switchLabel.appendChild(checkbox);\n\n  const span = document.createElement('span');\n  span.classList.add('slider', 'round');\n  switchLabel.appendChild(span);\n\n  const fahrenheit = document.createElement('span');\n  fahrenheit.classList.add('span', 'align-top', 'pl-2');\n  fahrenheit.innerHTML = 'Fahrenheit';\n  toogleDiv.appendChild(switchLabel);\n\n  toogleDiv.appendChild(fahrenheit);\n\n  contentToogle.appendChild(toogleDiv);\n\n  contentCenter.appendChild(contentToogle);\n  content.appendChild(contentCenter);\n  document.body.appendChild(content);\n  (0,_card__WEBPACK_IMPORTED_MODULE_1__.default)(data);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (display);\n\n\n//# sourceURL=webpack://open/./src/view/display.js?");
 
 /***/ }),
 
@@ -163,6 +283,36 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/view/getError.js":
+/*!******************************!*\
+  !*** ./src/view/getError.js ***!
+  \******************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _events_close__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../events/close */ \"./src/events/close.js\");\n\n\nconst displayError = (error) => {\n  const modalBody = document.getElementById('modalBody');\n  modalBody.innerHTML = '';\n  const modalError = document.getElementById('myModal');\n  modalBody.innerHTML = error;\n  modalError.style.display = 'block';\n  (0,_events_close__WEBPACK_IMPORTED_MODULE_0__.default)('close', 'myModal');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayError);\n\n\n//# sourceURL=webpack://open/./src/view/getError.js?");
+
+/***/ }),
+
+/***/ "./src/view/render.js":
+/*!****************************!*\
+  !*** ./src/view/render.js ***!
+  \****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _controller_image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../controller/image */ \"./src/controller/image.js\");\n/* harmony import */ var _controller_weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controller/weather */ \"./src/controller/weather.js\");\n/* harmony import */ var _models_info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/info */ \"./src/models/info.js\");\n/* harmony import */ var _models_httperror__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/httperror */ \"./src/models/httperror.js\");\n/* harmony import */ var _display__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./display */ \"./src/view/display.js\");\n/* harmony import */ var _getError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./getError */ \"./src/view/getError.js\");\n\n\n\n\n\n\n\nconst render = async (inputCity) => {\n  let dataWeather;\n\n  try {\n    dataWeather = await (0,_controller_weather__WEBPACK_IMPORTED_MODULE_0__.default)(inputCity);\n    const dataImage = await (0,_controller_image__WEBPACK_IMPORTED_MODULE_3__.default)(dataWeather.list[0].weather[0].main);\n    const info = (0,_models_info__WEBPACK_IMPORTED_MODULE_4__.default)(dataImage, dataWeather.city.name,\n      dataWeather.list[0].weather[0].description, dataWeather.list[0].main.temp,\n      dataWeather.list[0].main.temp_max, dataWeather.list[0].main.temp_min,\n      dataWeather.list[0].main.humidity, dataWeather.list[0].main.pressure);\n    (0,_display__WEBPACK_IMPORTED_MODULE_2__.default)(info);\n  } catch (err) {\n    if (err instanceof _models_httperror__WEBPACK_IMPORTED_MODULE_1__.default && err.response.status === 404) {\n      (0,_getError__WEBPACK_IMPORTED_MODULE_5__.default)('City not found');\n    } else {\n      throw err;\n    }\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (render);\n\n\n//# sourceURL=webpack://open/./src/view/render.js?");
+
+/***/ }),
+
 /***/ "./src/view/search.js":
 /*!****************************!*\
   !*** ./src/view/search.js ***!
@@ -175,6 +325,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst search = () => {\n  document.body.innerHTML += `<div class=\"container-fluid form\">\n    <form id = 'city' action = '/' method=\"get\">\n      <div class=\"form-row justify-content-center align-items-center mt-3\">\n        <div class=\"col-sm-3 my-1\">\n          <label class=\"sr-only\" for=\"city\">City</label>\n          <input id =\"inputCity\" type=\"text\" class=\"form-control\" minlength=\"2\" placeholder=\"City\" required>\n        </div>\n        <div class=\"col-auto my-1\">\n          <input type=\"submit\" class=\"btn btn-primary\" value =\"Submit\" >\n        </div>\n      </div>\n    </form>\n  </div>`;\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (search);\n\n\n//# sourceURL=webpack://open/./src/view/search.js?");
+
+/***/ }),
+
+/***/ "./src/view/toggle.js":
+/*!****************************!*\
+  !*** ./src/view/toggle.js ***!
+  \****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./card */ \"./src/view/card.js\");\n/* harmony import */ var _controller_weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controller/weather */ \"./src/controller/weather.js\");\n/* harmony import */ var _models_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/info */ \"./src/models/info.js\");\n\n\n\n\nconst toggle = async (data) => {\n  const checkBox = document.getElementById('myCheck');\n  if (checkBox.checked === false) {\n    const dataWeather = await (0,_controller_weather__WEBPACK_IMPORTED_MODULE_0__.default)(data.getInfo().country, 'metric');\n    const info = (0,_models_info__WEBPACK_IMPORTED_MODULE_1__.default)(data.getInfo().image, dataWeather.city.name,\n      dataWeather.list[0].weather[0].description, dataWeather.list[0].main.temp,\n      dataWeather.list[0].main.temp_max, dataWeather.list[0].main.temp_min,\n      dataWeather.list[0].main.humidity, dataWeather.list[0].main.pressure);\n    (0,_card__WEBPACK_IMPORTED_MODULE_2__.default)(info, 'C°');\n  } else {\n    const dataWeather = await (0,_controller_weather__WEBPACK_IMPORTED_MODULE_0__.default)(data.getInfo().country);\n    const info = (0,_models_info__WEBPACK_IMPORTED_MODULE_1__.default)(data.getInfo().image, dataWeather.city.name,\n      dataWeather.list[0].weather[0].description, dataWeather.list[0].main.temp,\n      dataWeather.list[0].main.temp_max, dataWeather.list[0].main.temp_min,\n      dataWeather.list[0].main.humidity, dataWeather.list[0].main.pressure);\n    (0,_card__WEBPACK_IMPORTED_MODULE_2__.default)(info);\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggle);\n\n\n//# sourceURL=webpack://open/./src/view/toggle.js?");
 
 /***/ })
 
