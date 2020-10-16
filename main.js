@@ -114,7 +114,37 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './css/style.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './view/error'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './view/search'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './events/formCity'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\n\n\n\n\n\n\n(async () => {\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './view/error'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './view/search'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './events/formCity'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\n})();\n\n\n//# sourceURL=webpack://open/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './css/style.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n/* harmony import */ var _view_error__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./view/error */ \"./src/view/error.js\");\n/* harmony import */ var _view_search__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./view/search */ \"./src/view/search.js\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './events/formCity'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\n\n\n\n\n\n\n(async () => {\n  (0,_view_error__WEBPACK_IMPORTED_MODULE_3__.default)();\n  (0,_view_search__WEBPACK_IMPORTED_MODULE_4__.default)();\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './events/formCity'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\n})();\n\n\n//# sourceURL=webpack://open/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/view/error.js":
+/*!***************************!*\
+  !*** ./src/view/error.js ***!
+  \***************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst modalError = () => {\n  document.body.innerHTML = `<div id=\"myModal\" class=\"alert alert-danger modal\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" id =\"close\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n        <h4 id=\"alert-modal-title\" class=\"modal-title\"></h4>\n      </div>\n        <div id=\"alert-modal-body\" class=\"modal-body\">\n            <p id = \"modalBody\" class=\"text-center\"></p>\n        </div>\n      </div>\n    </div>\n    </div>`;\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalError);\n\n\n//# sourceURL=webpack://open/./src/view/error.js?");
+
+/***/ }),
+
+/***/ "./src/view/search.js":
+/*!****************************!*\
+  !*** ./src/view/search.js ***!
+  \****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst search = () => {\n  document.body.innerHTML += `<div class=\"container-fluid form\">\n    <form id = 'city' action = '/' method=\"get\">\n      <div class=\"form-row justify-content-center align-items-center mt-3\">\n        <div class=\"col-sm-3 my-1\">\n          <label class=\"sr-only\" for=\"city\">City</label>\n          <input id =\"inputCity\" type=\"text\" class=\"form-control\" minlength=\"2\" placeholder=\"City\" required>\n        </div>\n        <div class=\"col-auto my-1\">\n          <input type=\"submit\" class=\"btn btn-primary\" value =\"Submit\" >\n        </div>\n      </div>\n    </form>\n  </div>`;\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (search);\n\n\n//# sourceURL=webpack://open/./src/view/search.js?");
 
 /***/ })
 
