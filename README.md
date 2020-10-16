@@ -39,7 +39,7 @@ To get a local copy up and running follow these simple example steps:
 9. Sixth, Open dist/index.html page with browser
 
 
-## See a live demo [Here](https://raw.githack.com/edieatha/to-do-list/to-do-list-feature/dist/index.html)
+## See a live demo [Here](https://silly-hoover-313a7e.netlify.app/)
 
 ## Show your support
 Give a ⭐️ if you like this project!
