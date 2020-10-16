@@ -1,0 +1,43 @@
+{
+  "name": "open",
+  "version": "1.0.0",
+  "description": "A Javascript Api weather web app",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rindrajosia/openweather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rindrajosia/openweather/issues"
+  },
+  "homepage": "https://github.com/rindrajosia/openweather#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^5.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "file-loader": "^6.1.1",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.8.0",
+    "stylelint-scss": "^3.17.2",
+    "webpack": "^5.1.2",
+    "webpack-cli": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}
