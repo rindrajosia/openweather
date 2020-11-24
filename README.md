@@ -1,5 +1,5 @@
 # Weather App
-A Javascript project by creating a weather forecast site using the weather API
+A weather app that pulls from the OpenWeatherMap API to allow users to search for and view the forecast in cities worldwide. Built with JavaScript.
 
 ## Built with
 
